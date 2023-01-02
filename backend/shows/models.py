@@ -92,6 +92,12 @@ class Show(models.Model):
         (1, "published", _("Published")),
         (2, "closed", _("Closed")),
     )
+    PAYMENT_METHODS = Choices(
+        (0, "cash", _("Cash")),
+        (1, "venmo", _("Venmo")),
+        (2, "paypal", _("PayPal")),
+        (3, "check", _("Check")),
+    )
 
     name = models.CharField(max_length=60, null=False, blank=False)
     date = models.DateField(null=True, blank=True, verbose_name="show date")
@@ -143,6 +149,7 @@ class Show(models.Model):
     )
     notes = models.TextField(blank=True, verbose_name="notes")
     rate = models.DecimalField(blank=True, null=True, decimal_places=2, max_digits=10, verbose_name="rate")
+    payment_method = models.PositiveSmallIntegerField(choices=PAYMENT_METHODS, default=PAYMENT_METHODS.cash, verbose_name="payment method")
 
     class Meta:
         ordering = ["date", "time"]

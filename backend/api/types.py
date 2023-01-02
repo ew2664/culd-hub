@@ -49,6 +49,7 @@ class ShowType(DjangoObjectType):
             "status",
             "notes",
             "rate",
+            "payment_method",
         )
         convert_choices_to_enum = False
 

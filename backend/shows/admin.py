@@ -45,6 +45,7 @@ class ShowAdmin(admin.ModelAdmin):
         "address",
         "notes",
         "rate",
+        "payment_method",
     ]
     empty_value_display = "TBD"
 
