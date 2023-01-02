@@ -44,6 +44,7 @@ class ShowAdmin(admin.ModelAdmin):
         "rounds",
         "address",
         "notes",
+        "rate",
     ]
     empty_value_display = "TBD"
 

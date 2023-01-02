@@ -48,6 +48,7 @@ class ShowType(DjangoObjectType):
             "priority",
             "status",
             "notes",
+            "rate",
         )
         convert_choices_to_enum = False
 

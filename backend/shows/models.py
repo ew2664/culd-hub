@@ -142,6 +142,7 @@ class Show(models.Model):
         choices=PRIORITIES, default=PRIORITIES.normal
     )
     notes = models.TextField(blank=True, verbose_name="notes")
+    rate = models.DecimalField(blank=True, null=True, decimal_places=2, max_digits=10, verbose_name="rate")
 
     class Meta:
         ordering = ["date", "time"]
